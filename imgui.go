@@ -673,7 +673,7 @@ func IsMouseReleased(button int) bool {
 func GetMousePos() Vec2 {
 	var pos Vec2
 	w, f := pos.wrapped()
-	defer f()
 	*w = C.iggGetMousePos()
+	f()
 	return pos
 }
