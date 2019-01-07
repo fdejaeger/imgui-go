@@ -110,6 +110,10 @@ extern void iggCloseCurrentPopup(void);
 extern IggBool  iggIsItemHovered(int flags);
 
 extern IggBool iggIsKeyPressed(int key);
+extern IggBool iggIsMouseClicked(int button, IggBool selected);
+extern IggBool iggIsMouseReleased(int button);
+
+extern IggVec2 iggGetMousePos();
 
 #ifdef __cplusplus
 }

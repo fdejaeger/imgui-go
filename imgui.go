@@ -658,3 +658,22 @@ func IsItemHovered() bool {
 func IsKeyPressed(key int) bool {
 	return C.iggIsKeyPressed(C.int(key)) != 0
 }
+
+// IsMouseClicked returns true if the corresponding mouse button has just been clicked.
+func IsMouseClicked(button int) bool {
+	return C.iggIsMouseClicked(C.int(button), C.IggBool(0)) != 0
+}
+
+// IsMouseReleased returns true if the corresponding mouse button has just been released.
+func IsMouseReleased(button int) bool {
+	return C.iggIsMouseReleased(C.int(button)) != 0
+}
+
+// GetMousePos returns the current mouse cursor location.
+func GetMousePos() Vec2 {
+	var pos Vec2
+	w, f := pos.wrapped()
+	defer f()
+	*w = C.iggGetMousePos()
+	return pos
+}

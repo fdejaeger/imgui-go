@@ -417,3 +417,20 @@ IggBool iggIsKeyPressed(int key)
 {
    return ImGui::IsKeyPressed(key);
 }
+
+IggBool iggIsMouseClicked(int button, IggBool selected)
+{
+   return ImGui::IsMouseClicked(button, selected != 0);
+}
+
+IggBool iggIsMouseReleased(int button)
+{
+   return ImGui::IsMouseReleased(button);
+}
+
+IggVec2 iggGetMousePos()
+{
+   IggVec2 ret;
+   exportValue(ret, ImGui::GetMousePos());
+   return ret;
+}
